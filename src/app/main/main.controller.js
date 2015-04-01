@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gulpInstall')
-  .controller('MainCtrl', function ($scope, localStorageService) {
+  .controller('MainCtrl', function ($scope, localStorageService, SocketFactory) {
     var todosInStore = localStorageService.get('todos');
 
     $scope.todos = todosInStore || [];
@@ -12,9 +12,23 @@ angular.module('gulpInstall')
 
       $scope.addTodo = function () {
       $scope.todos.push($scope.todo);
+      Sockets.emit({
+        type : 'add',
+        data : $scope.todo
+      });
+
       $scope.todo = '';
+
     };
     $scope.removeTodo = function (index) {
       $scope.todos.splice(index, 1);
+      SocketFactory.emit({
+        type : 'remove',
+        index : index
+      });
     };
+
+
+    
+
   });
