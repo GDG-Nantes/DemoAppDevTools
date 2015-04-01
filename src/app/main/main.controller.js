@@ -10,9 +10,9 @@ angular.module('gulpInstall')
       localStorageService.set('todos', $scope.todos);
     }, true);
 
-      $scope.addTodo = function () {
+    $scope.addTodo = function () {
       $scope.todos.push($scope.todo);
-      Sockets.emit({
+      SocketFactory.emit({
         type : 'add',
         data : $scope.todo
       });
