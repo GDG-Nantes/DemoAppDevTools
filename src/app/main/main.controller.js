@@ -30,7 +30,7 @@ angular.module('devtoolsTodoApp')
     };
 
     function reloadDefaultValue() {
-      $http.get("plan.json").then(function majTodo(response) {
+      $http.get('plan.json').then(function majTodo(response) {
         return response.data;
       }).then(function setData(todos) {
         $scope.todos = todos;
@@ -61,11 +61,11 @@ angular.module('devtoolsTodoApp')
 
 
     $scope.icons = [
-      {"value": "Coder", "label": "<i class=\"glyphicon glyphicon-pencil\"></i> Coder"},
-      {"value": "Network", "label": "<i class=\"glyphicon glyphicon-globe\"></i> Network"},
-      {"value": "Responsive", "label": "<i class=\"glyphicon glyphicon-indent-right\"></i> Responsive"},
-      {"value": "Debugger", "label": "<i class=\"glyphicon glyphicon-wrench\"></i> Débugger"},
-      {"value": "Optimiser", "label": "<i class=\"glyphicon glyphicon-road\"></i> Optimiser"}
+      {'value': 'Coder', 'label': '<i class=\'glyphicon glyphicon-pencil\'></i> Coder'},
+      {'value': 'Network', 'label': '<i class=\'glyphicon glyphicon-globe\'></i> Network'},
+      {'value': 'Responsive', 'label': '<i class=\'glyphicon glyphicon-indent-right\'></i> Responsive'},
+      {'value': 'Debugger', 'label': '<i class=\'glyphicon glyphicon-wrench\'></i> Débugger'},
+      {'value': 'Optimiser', 'label': '<i class=\'glyphicon glyphicon-road\'></i> Optimiser'}
 
     ];
 
