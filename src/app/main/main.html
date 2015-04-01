@@ -1,11 +1,18 @@
 <div class="container">
   <h2>My todos</h2>
-   <!-- Todos input -->
+  <!-- Todos input -->
   <form role="form" ng-submit="addTodo()">
     <div class="row">
       <div class="input-group">
-        <input type="text" ng-model="todo" placeholder="What needs to be done?" class="form-control">
+        <input type="text" ng-model="todo.text" placeholder="What needs to be done?" class="form-control">
         <span class="input-group-btn">
+          <button type="button" class="btn btn-default"
+                  ng-model="todo.category"
+                  data-html="1"
+                  bs-options="icon.value as icon.label for icon in icons"
+                  placeholder="Choose a category"
+                  bs-select>
+          </button>
           <input type="submit" class="btn btn-primary" value="Add">
         </span>
       </div>
@@ -14,10 +21,13 @@
 
   <!-- Todos list -->
   <div ui-sortable ng-model="todos">
-    <p class="input-group" ng-repeat="todo in todos" style="padding:5px 10px; cursor: move;">
-      <input type="text" ng-model="todo" class="form-control">
-      <span class="input-group-btn">
-        <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+    <p ng-repeat="todo in todos" class="clearfix col-xs-6 col-md-12" style="padding:5px 10px 0px 0px; cursor: move;">
+      <span ng-bind="todo.category" class="pull-left label {{todo.category | cat2color}}"></span>
+      <span class="input-group col-xs-12 col-md-12">
+        <input type="text" ng-model="todo.text" class="form-control col-xs-8"/>
+        <span class="input-group-btn">
+          <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+        </span>
       </span>
     </p>
   </div>

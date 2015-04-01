@@ -3,7 +3,7 @@
 describe('controllers', function(){
   var scope;
 
-  beforeEach(module('gulpInstall'));
+  beforeEach(module('devtoolsTodoApp'));
 
   beforeEach(inject(function($rootScope) {
     scope = $rootScope.$new();

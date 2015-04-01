@@ -1,11 +1,20 @@
 'use strict';
 
-angular.module('gulpInstall', 
-  ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute', 'ui.bootstrap','ui.sortable','LocalStorageModule'])
-  .config(['localStorageServiceProvider', function(localStorageServiceProvider){
-      localStorageServiceProvider.setPrefix('ls');
+angular.module('devtoolsTodoApp',
+  ['ngAnimate',
+    'ngCookies',
+    'ngTouch',
+    'ngSanitize',
+    'ngResource',
+    'ngRoute',
+    'ui.bootstrap',
+    'ui.sortable',
+    'LocalStorageModule',
+    'mgcrea.ngStrap'])
+  .config(['localStorageServiceProvider', function(localStorageServiceProvider) {
+    localStorageServiceProvider.setPrefix('ls');
   }])
-  .config(function ($routeProvider) {
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'app/main/main.html',
