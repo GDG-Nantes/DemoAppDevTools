@@ -1,0 +1,74 @@
+[
+  {
+    "category": "Coder",
+    "text": "Montrer les workspaces"
+  },
+  {
+    "category": "Coder",
+    "text": "Coder avec les Snippets"
+  },
+  {
+    "category": "Coder",
+    "text": "Tester les APIs HTML5"
+  },
+  {
+    "category": "Network",
+    "text": "Détecter les trames HTTPS & Websocket"
+  },
+  {
+    "category": "Network",
+    "text": "Etudier la lourdeur d'un site et rejouer une requête XHR"
+  },
+  {
+    "category": "Responsive",
+    "text": "Montrer la 'Device Emulation'"
+  },
+  {
+    "category": "Responsive",
+    "text": "Gérer ses CSS print"
+  },
+  {
+    "category": "Responsive",
+    "text": "Emuler les classes ':hover' et figer l'état avec les 'DOM breakpoints'"
+  },
+  {
+    "category": "Responsive",
+    "text": "Déceler les parties de la vue qui change"
+  },
+  {
+    "category": "Debugger",
+    "text": "Sélectionner les éléments du DOM"
+  },
+  {
+    "category": "Debugger",
+    "text": "Utiliser les sourcesmaps"
+  },
+  {
+    "category": "Debugger",
+    "text": "Visualiser le 'Shadow Dom'"
+  },
+  {
+    "category": "Debugger",
+    "text": "Comprendre l'ordre d'affichage des éléments (timeline)"
+  },
+  {
+    "category": "Debugger",
+    "text": "Inspecter le 'localStorage'"
+  },
+  {
+    "category": "Debugger",
+    "text": "Comprendre la blackbox"
+  },
+  {
+    "category": "Optimiser",
+    "text": "Jouer avec le profiler JS"
+  },
+  {
+    "category": "Optimiser",
+    "text": "Aller plus loin avec les applications AngularJS"
+  },
+  {
+    "category": "Optimiser",
+    "text": "Evaluer son application et l'optimiser"
+  }
+]

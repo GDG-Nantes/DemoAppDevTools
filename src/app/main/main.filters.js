@@ -12,7 +12,7 @@ angular.module('devtoolsTodoApp')
           return "label-info";
         case "Optimiser":
           return "label-warning";
-        case "Débugger":
+        case "Debugger":
           return "label-danger";
       }
     }

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('devtoolsTodoApp')
-  .controller('MainCtrl', function($scope, localStorageService, SocketFactory) {
+  .controller('MainCtrl', function($scope, $http, $timeout, localStorageService, SocketFactory) {
     var todosInStore = localStorageService.get('todos');
 
     $scope.todo = {};
@@ -11,11 +11,32 @@ angular.module('devtoolsTodoApp')
       localStorageService.set('todos', $scope.todos);
     }, true);
 
+    var timeoutIndex = 0;
+
+    $scope.reload = function() {
+      timeoutIndex += 1;
+      if ((timeoutIndex % 3) === 0) {
+        $timeout(reloadDefaultValue, 1000);
+      } else {
+        reloadDefaultValue();
+      }
+    };
+
+    function reloadDefaultValue() {
+      $http.get("plan.json").then(function majTodo(response) {
+        return response.data;
+      }).then(function setData(todos) {
+        $scope.todos = todos;
+      }).then(function updateLocalStorage() {
+        localStorageService.set('todos', $scope.todos);
+      });
+    }
+
     $scope.addTodo = function() {
-      $scope.todos.push($scope.todo);
+      $scope.todos.splice(0, 0, $scope.todo);
       SocketFactory.emit({
-        type : 'add',
-        data : $scope.todo
+        type: 'add',
+        data: $scope.todo
       });
 
       $scope.todo = {};
@@ -34,8 +55,8 @@ angular.module('devtoolsTodoApp')
       {"value": "Coder", "label": "<i class=\"glyphicon glyphicon-pencil\"></i> Coder"},
       {"value": "Network", "label": "<i class=\"glyphicon glyphicon-globe\"></i> Network"},
       {"value": "Responsive", "label": "<i class=\"glyphicon glyphicon-indent-right\"></i> Responsive"},
-      {"value": "Optimiser", "label": "<i class=\"glyphicon glyphicon-road\"></i> Optimiser"},
-      {"value": "Débugger", "label": "<i class=\"glyphicon glyphicon-wrench\"></i> Débugger"}
+      {"value": "Debugger", "label": "<i class=\"glyphicon glyphicon-wrench\"></i> Débugger"},
+      {"value": "Optimiser", "label": "<i class=\"glyphicon glyphicon-road\"></i> Optimiser"}
 
     ];
 
