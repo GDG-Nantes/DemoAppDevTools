@@ -12,5 +12,43 @@
     width: 50px;
   }
 }
+
+@media screen and (min-width:1500px){
+
+	div[ng-view] div.container:before{
+		position: fixed;
+		left: 10px;
+		top:50%;
+		width: 160px;
+		height: 600px;
+		margin-top: -300px;
+		background-image: url(../assets/images/banniere_devoxx_france_160_6001.png);
+		background-repeat: no-repeat;
+	}
+
+	div[ng-view] div.container:after{
+		position: fixed;
+		right: 10px;
+		top:50%;
+		width: 160px;
+		height: 600px;
+		margin-top: -300px;
+		background-image: url(../assets/images/banniere_devoxx_france_160_6001.png);
+		background-repeat: no-repeat;
+	}
+}
+
+@media screen and (max-width:1500px){
+	div[ng-view] div.container:before{
+		position: relative;
+		left: 50%;
+		top:20px;
+		width: 600px;
+		height: 152px;
+		margin-left: -300px;
+		background-image: url(../assets/images/banniere-web-devoxx-france-2015_600_1531.png);
+		background-repeat: no-repeat;
+	}
+}
 // injector
 // endinjector
