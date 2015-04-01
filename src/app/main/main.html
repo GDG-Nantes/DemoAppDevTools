@@ -4,7 +4,7 @@
   </div>
   <h2>
     My todos
-    <span class="glyphicon glyphicon-refresh" ng-click="reload()"></span>
+    <span ng-click="reload()" class="glyphicon glyphicon-refresh" ng-class="{'icon-refresh-animate':loading}"></span>
   </h2>
   <!-- Todos input -->
   <form role="form" ng-submit="addTodo()">
@@ -27,11 +27,25 @@
 
   <!-- Todos list -->
   <div ui-sortable ng-model="todos">
-    <p ng-repeat="todo in todos" class="clearfix col-xs-6 col-md-12" style="padding:5px 10px 0px 0px; cursor: move;">
+    <p ng-repeat="todo in todos" class="clearfix col-xs-6 col-md-12 todo-elem"
+       style="padding:5px 10px 0px 0px; cursor: move;">
       <span ng-bind="todo.category" class="pull-left label {{todo.category | cat2color}}"></span>
       <span class="input-group col-xs-12 col-md-12">
-        <input type="text" ng-model="todo.text" class="form-control col-xs-8"/>
+        <input type="text" ng-model="todo.text" class="hidden-sm form-control col-xs-8 input-elem-done input-elem"
+               ng-if="todo.checked">
+        <input type="text" ng-model="todo.text" class="hidden-sm form-control col-xs-8 input-elem"
+               ng-if="!todo.checked">
+        <span class="visible-sm form-control col-xs-8 input-elem-done span-elem"
+              ng-if="todo.checked"
+              ng-click="changeState(todo)">{{todo.text}}
+        </span>
+        <span class="visible-sm form-control col-xs-8 span-elem"
+              ng-if="!todo.checked"
+              ng-click="changeState(todo)">{{todo.text}}
+        </span>
+
         <span class="input-group-btn">
+          <button class="btn btn-success hidden-sm" ng-click="todo.checked = !todo.checked" aria-label="Done">✓</button>
           <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
         </span>
       </span>

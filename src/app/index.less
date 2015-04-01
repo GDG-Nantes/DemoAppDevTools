@@ -71,5 +71,43 @@ div.printOnly{
 	}
 
 }
+
+.icon-refresh-animate {
+  animation-name: rotateThis;
+  animation-duration: .9s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotateThis {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.todo-elem.ng-enter {
+  animation: fadeInDown 0.7s;
+}
+.todo-elem.ng-leave {
+  animation: slideOutLeft 0.7s;
+}
+.input-elem-done {
+  background-color: #dff0d8;
+}
+.input-elem.ng-enter {
+  animation: bounceIn 0.7s;
+}
+.input-elem.ng-leave-active {
+  display: none;
+}
+.span-elem.ng-enter {
+  animation: bounceIn 0.7s;
+}
+.span-elem.ng-leave-active {
+  display: none;
+}
+
 // injector
 // endinjector

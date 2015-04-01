@@ -14,12 +14,19 @@ angular.module('devtoolsTodoApp')
     var timeoutIndex = 0;
 
     $scope.reload = function() {
+      $scope.loading = true;
       timeoutIndex += 1;
       if ((timeoutIndex % 3) === 0) {
-        $timeout(reloadDefaultValue, 1000);
+        $timeout(reloadDefaultValue, 1500);
       } else {
         reloadDefaultValue();
       }
+    };
+
+    $scope.changeState = function (item) {
+      $timeout(function () {
+        item.checked = !item.checked;
+      }, 250);
     };
 
     function reloadDefaultValue() {
@@ -29,6 +36,8 @@ angular.module('devtoolsTodoApp')
         $scope.todos = todos;
       }).then(function updateLocalStorage() {
         localStorageService.set('todos', $scope.todos);
+      }).then(function disableLoading() {
+        $scope.loading = false;
       });
     }
 
