@@ -32,13 +32,15 @@ module.exports = function(options) {
     browserSync.instance = browserSync.init({
       startPath: '/',
       server: server,
-      browser: browser
+      browser: browser,
+      ui: false,
+      notify: false
     });
   }
 
-  browserSync.use(browserSyncSpa({
+  /*browserSync.use(browserSyncSpa({
     selector: '[ng-app]'// Only needed for angular apps
-  }));
+  }));*/
 
   gulp.task('serve', ['watch'], function () {
     browserSyncInit([options.tmp + '/serve', options.src]);
