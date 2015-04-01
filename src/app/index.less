@@ -50,5 +50,26 @@
 		background-repeat: no-repeat;
 	}
 }
+
+div.printOnly{
+	display: none;
+}
+
+@media print{
+	div[ng-view] div.printOnly{
+		position: relative;
+		display: block;
+		left: 50%;
+		top:20px;
+		width: 450px;
+		height: 157px;
+		margin-left: -225px;
+	}
+
+	form, button.btn.btn-danger{
+		display: none;
+	}
+
+}
 // injector
 // endinjector
