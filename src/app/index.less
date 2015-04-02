@@ -1,3 +1,5 @@
+@import '../../bower_components/bootstrap/less/variables.less';
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -15,7 +17,7 @@
 
 @media screen and (min-width:1500px){
 
-	div[ng-view] div.container:before{
+	div[ng-view] div.container:before{ 
 		position: fixed;
 		left: 10px;
 		top:50%;
@@ -66,7 +68,27 @@ div.printOnly{
 		margin-left: -225px;
 	}
 
-	form, button.btn.btn-danger{
+	div span.label-success{
+		background: @brand-success !important;
+	}
+
+	div span.label-primary{ 
+		background: @brand-primary !important;
+	}
+
+	div span.label-info{
+		background: @brand-info !important;
+	}
+
+	div span.label-warning{
+		background: @brand-warning !important;
+	}
+
+	div span.label-danger{
+		background: @brand-danger !important;
+	}
+
+	form, .input-group-btn{
 		display: none;
 	}
 

@@ -27,7 +27,7 @@
 
   <!-- Todos list -->
   <div ui-sortable ng-model="todos">
-    <p ng-repeat="todo in todos" class="clearfix col-xs-6 col-md-12 todo-elem"
+    <p ng-repeat="todo in todos" class="clearfix col-xs-12 col-md-6 todo-elem"
        style="padding:5px 10px 0px 0px; cursor: move;">
       <span ng-bind="todo.category" class="pull-left label {{todo.category | cat2color}}"></span>
       <span class="input-group col-xs-12 col-md-12">
