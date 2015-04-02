@@ -17,7 +17,7 @@
 
 @media screen and (min-width:1500px){
 
-	div[ng-view] div.container:before{ 
+	div[ng-view] div.container:before{
 		position: fixed;
 		left: 10px;
 		top:50%;
@@ -72,7 +72,7 @@ div.printOnly{
 		background: @brand-success !important;
 	}
 
-	div span.label-primary{ 
+	div span.label-primary{
 		background: @brand-primary !important;
 	}
 
@@ -113,7 +113,8 @@ div.printOnly{
   animation: fadeInDown 0.7s;
 }
 .todo-elem.ng-leave {
-  animation: slideOutLeft 0.7s;
+  /*animation: slideOutLeft 0.7s;*/
+  display: none;
 }
 .input-elem-done {
   background-color: #dff0d8;
