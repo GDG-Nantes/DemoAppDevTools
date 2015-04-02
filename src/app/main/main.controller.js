@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('devtoolsTodoApp')
-  .controller('MainCtrl', function($scope, $http, $timeout, localStorageService, SocketFactory) {
+  .controller('MainCtrl', function($scope, $rootScope, $http, $timeout, localStorageService, SocketFactory) {
     var todosInStore = localStorageService.get('todos');
 
     $scope.todo = {};
@@ -43,20 +43,15 @@ angular.module('devtoolsTodoApp')
 
     $scope.addTodo = function() {
       $scope.todos.splice(0, 0, $scope.todo);
-      SocketFactory.emit({
-        type: 'add',
-        data: $scope.todo
-      });
+     
+      $rootScope.$emit('add', $scope.todo);
 
       $scope.todo = {};
 
     };
     $scope.removeTodo = function(index) {
       $scope.todos.splice(index, 1);
-      SocketFactory.emit({
-        type: 'remove',
-        index: index
-      });
+      $rootScope.$emit('remove', index);     
     };
 
 
