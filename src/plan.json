@@ -1,7 +1,7 @@
 [
   {
     "category": "Coder",
-    "text": "Montrer les workspaces"
+    "text": "Montrer les workspaces",
   },
   {
     "category": "Coder",
@@ -29,11 +29,11 @@
   },
   {
     "category": "Responsive",
-    "text": "Emuler les classes ':hover' et figer l'état avec les 'DOM breakpoints'"
+    "text": "Déceler les parties de la vue qui change"
   },
   {
     "category": "Responsive",
-    "text": "Déceler les parties de la vue qui change"
+    "text": "Emuler les classes ':hover' et figer l'état avec les 'DOM breakpoints'"
   },
   {
     "category": "Debugger",
