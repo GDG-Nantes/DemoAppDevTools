@@ -34,7 +34,8 @@ module.exports = function(options) {
       server: server,
       browser: browser,
       ui: false,
-      notify: false
+      notify: false,
+      open: false
     });
   }
 

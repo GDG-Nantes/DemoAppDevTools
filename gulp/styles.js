@@ -43,8 +43,7 @@ module.exports = function(options) {
     .pipe(indexFilter.restore())
     .pipe($.sourcemaps.init())
     .pipe($.less(lessOptions)).on('error', options.errorHandler('Less'))
-    .pipe($.autoprefixer()).on('error', options.errorHandler('Autoprefixer'))
-    .pipe($.sourcemaps.write())
+    .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(options.tmp + '/serve/app/'))
     .pipe(browserSync.reload({ stream: true }));
   });
