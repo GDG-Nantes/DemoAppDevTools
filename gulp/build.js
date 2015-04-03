@@ -73,7 +73,7 @@ module.exports = function(options) {
   });
 
   gulp.task('other', function () {
-    return gulp.src([
+    return gulp.src(['app.yaml',
       options.src + '/**/*',
       '!' + options.src + '/**/*.{html,css,js,less}'
     ])
