@@ -131,17 +131,24 @@ div.printOnly{
 .input-elem-done {
   background-color: #dff0d8;//#red
 }
-.input-elem.ng-enter {
-  animation: bounceIn 0.7s;
+@media screen and (min-width:768px) {	
+	.input-elem.ng-enter {
+	  animation: bounceIn 0.7s;
+	}
+	.input-elem.ng-leave-active {
+	  display: none;
+	}
 }
-.input-elem.ng-leave-active {
-  display: none;
-}
-.span-elem.ng-enter {
-  animation: bounceIn 0.7s;
-}
-.span-elem.ng-leave-active {
-  display: none;
+@media screen and (max-width:768px) {
+	.span-elem.ng-enter {
+	  animation: bounceIn 0.7s;
+	}
+	.span-elem.ng-leave {
+	  display: none!important;
+	}
+	.span-elem.ng-leave-active {
+	  display: none;
+	}
 }
 
 // injector

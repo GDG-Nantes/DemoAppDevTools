@@ -31,15 +31,15 @@
        style="padding:5px 10px 0px 0px; cursor: move;">
       <span ng-bind="todo.category" class="pull-left label {{todo.category | cat2color}}"></span>
       <span class="input-group col-xs-12 col-md-12">
-        <input type="text" ng-model="todo.text" class="hidden-sm form-control col-xs-8 input-elem-done input-elem"
+        <input type="text" ng-model="todo.text" class="hidden-xs form-control col-xs-8 input-elem-done input-elem"
                ng-if="todo.checked">
-        <input type="text" ng-model="todo.text" class="hidden-sm form-control col-xs-8 input-elem"
+        <input type="text" ng-model="todo.text" class="hidden-xs form-control col-xs-8 input-elem"
                ng-if="!todo.checked">
-        <span class="visible-sm form-control col-xs-8 input-elem-done span-elem"
+        <span class="visible-xs form-control col-xs-8 input-elem-done span-elem"
               ng-if="todo.checked"
               ng-click="changeState(todo)">{{todo.text}}
         </span>
-        <span class="visible-sm form-control col-xs-8 span-elem"
+        <span class="visible-xs form-control col-xs-8 span-elem"
               ng-if="!todo.checked"
               ng-click="changeState(todo)">{{todo.text}}
         </span>

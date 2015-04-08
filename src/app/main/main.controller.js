@@ -12,25 +12,37 @@ angular.module('devtoolsTodoApp')
     }, true);
 
     var timeoutIndex = 0;
+    var timeoutQueue = false;
+    var lostData;
 
     $scope.reload = function() {
       $scope.loading = true;
       timeoutIndex += 1;
       if ((timeoutIndex % 3) === 0) {
+        timeoutQueue = true;
+        lostData = 0;
         $timeout(reloadDefaultValue, 1500);
+        increment();
       } else {
         reloadDefaultValue();
       }
     };
 
-    $scope.changeState = function (item) {
-      $timeout(function () {
+    function increment() {
+      while (timeoutQueue && lostData <= 5000) {
+        console.warn("increment %i", lostData);
+        lostData += 1;
+      }
+    }
+    $scope.changeState = function(item) {
+      $timeout(function() {
         item.checked = !item.checked;
       }, 250);
     };
 
     function reloadDefaultValue() {
       $http.get('plan.json').then(function majTodo(response) {
+        timeoutQueue = false;
         return response.data;
       }).then(function setData(todos) {
         $scope.todos = todos;
