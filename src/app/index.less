@@ -38,6 +38,13 @@
 		background-image: url(../assets/images/banniere_devoxx_france_160_6001.png);
 		background-repeat: no-repeat;
 	}
+
+	div[ng-view].web2day{
+		div.container:before, div.container:after{
+			background-image: url(../assets/images/logo_cantine.png);
+		}
+		
+	}
 }
 
 @media screen and (max-width:600px){
@@ -49,6 +56,10 @@
 		height:152px;
 		background-image: url(../assets/images/banniere-web-devoxx-france-2015_600_1531.png);
 		background-repeat: no-repeat;
+	}
+
+	div[ng-view].web2day div.container:before{		
+		background-image: url(../assets/images/Web2day.png);
 	}
 }
 
@@ -63,10 +74,18 @@
 		background-image: url(../assets/images/banniere-web-devoxx-france-2015_600_1531.png);
 		background-repeat: no-repeat;
 	}
+
+	div[ng-view].web2day div.container:before{		
+		background-image: url(../assets/images/Web2day.png);
+	}
 }
 
 div.printOnly{
 	display: none;
+
+	.printWeb2Day{
+		display: none;
+	}
 }
 
 @media print{
@@ -78,6 +97,15 @@ div.printOnly{
 		width: 450px;
 		height: 157px;
 		margin-left: -225px;
+	}
+
+	div[ng-view].web2day div.printOnly {
+		img.devoxx{
+			display:none;
+		}
+		img.printWeb2Day{
+			display:block;
+		}
 	}
 
 	div span.label-success{
